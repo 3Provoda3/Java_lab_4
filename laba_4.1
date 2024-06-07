@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Laba_4 {
+    public static int getMaxValue (int n, int m, int i1, int j1, int i2, int j2, int[][] A ) {
+
+      if (i1 < 0 || i1 >= n || i2 < 0 || i2 >= n || j1 < 0 || j1 >= m || j2 < 0 || j2 >= m) {
+            System.out.println("Неправильні координати");
+            return -1;
+        }
+
+        int value1 = A[i1][j1];
+        int value2 = A[i2][j2];
+
+        return Math.max(value1, value2);
+    }
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Введіть координати n:");
+            int n  = scanner.nextInt();
+            System.out.println("Введіть координати m:");
+            int m  = scanner.nextInt();
+            System.out.println("Введіть координати i1:");
+            int i1 = scanner.nextInt();
+            System.out.println("Введіть координати j1:");
+            int j1 = scanner.nextInt();
+            System.out.println("Введіть координати i2:");
+            int i2 = scanner.nextInt();
+            System.out.println("Введіть координати j2:");
+            int j2 = scanner.nextInt();
+
+            int[][] A = {
+                    {3, -2, 3, 9},
+                    {0, 3, 10, 3},
+                    {5, -4, -6, 0},
+            };
+
+            int result = getMaxValue(n, m, i1, j1, i2, j2, A);
+            if (result != -1) {
+                System.out.println("Максимальне значення:" + result);
+            }
+        }
+    }
+
